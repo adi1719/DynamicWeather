@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Weather</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <h1>Dynamic Weather with Alerts</h1>
+    <h2>Current Weather</h2>
+    <div id="current-weather" class="container"></div>
+    <h2>Weather Averages</h2>
+    <canvas id="averages-chart"></canvas>
+
+    <h2>Daily Weather Summary</h2>
+    <select id="city-select">Select City</select>
+    <input type="date" id="start-date">
+    <input type="date" id="end-date">
+    <button onclick="fetchDailySummary()">Fetch Summary</button>
+    <canvas id="daily-summary-chart"></canvas>
+
+    <h2>Threshold Alerts</h2>
+    <div>
+        <h3>Create Alert</h3>
+        <form id="create-alert-form" onsubmit="createAlert(event)">
+            <input type="tel" id="alert-email" placeholder="Email Address" required>
+            <input type="number" id="threshold-temperature" placeholder="Threshold Temperature (°C)" required>
+            <select id="alert-city" required>
+                <option value="">Select City</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Bengaluru">Bengaluru</option>
+                <option value="Kolkata">Kolkata</option>
+                <option value="Hyderabad">Hyderabad</option>
+            </select>
+            <button type="submit">Create Alert</button>
+        </form>
+    </div>
+    <div>
+        <button onclick="fetchAlerts()" id="get_alerts_btn">Get Alerts</button>
+    </div>
+    <table id="alerts-table">
+        <thead>
+            <tr>
+                <th>Serial No.</th>
+                <th>Email Address</th>
+                <th>Threshold Temperature (°C)</th>
+                <th>City</th>
+                <th>Remove Alerts</th>
+            </tr>
+        </thead>
+        <tbody id="alerts-body"></tbody>
+    </table>
+
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>

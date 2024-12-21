@@ -1,0 +1,257 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+h1,
+h2 {
+    color: #2c3e50;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.weather-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    width: calc(33% - 20px);
+    box-sizing: border-box;
+}
+
+.weather-card h3 {
+    margin-top: 0;
+    color: #3498db;
+}
+
+.weather-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.temperature {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.feels-like {
+    font-size: 0.9em;
+    color: #7f8c8d;
+}
+
+.condition {
+    font-weight: bold;
+    color: #2ecc71;
+}
+
+#averages-chart {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .weather-card {
+        width: 100%;
+    }
+}
+
+#daily-summary-chart,
+#alerts-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.alert-item {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+}
+
+button:disabled {
+    background-color: #c0c0c0;
+    color: #6c757d;
+    cursor: not-allowed;
+}
+
+button.secondary {
+    background-color: #6c757d;
+}
+
+button.secondary:hover {
+    background-color: #5a6268;
+}
+
+input,
+select {
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    color: #495057;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+input::placeholder {
+    color: #6c757d;
+    opacity: 1;
+}
+
+select {
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23007bff"><path d="M7 10l5 5 5-5H7z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+}
+
+
+#get_alerts_btn {
+    margin-top: 10px;
+    background-color: #28a745;
+}
+
+#alerts-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+#alerts-table thead {
+    background-color: #007bff;
+    color: white;
+}
+
+#alerts-table th,
+#alerts-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+#alerts-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+#alerts-table td {
+    font-size: 14px;
+}
+
+#alerts-table th:nth-child(1),
+#alerts-table td:nth-child(1) {
+    width: 50px;
+}
+
+#alerts-table th:nth-child(2),
+#alerts-table td:nth-child(2) {
+    width: 200px;
+}
+
+#alerts-table th:nth-child(3),
+#alerts-table td:nth-child(3) {
+    width: 100px;
+}
+
+#alerts-table th:nth-child(4),
+#alerts-table td:nth-child(4) {
+    width: 150px;
+}
+
+#alerts-table th:nth-child(5),
+#alerts-table td:nth-child(5) {
+    width: 80px;
+}
+
+#alerts-table td button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#alerts-table td button:hover {
+    background-color: #c82333;
+}
+
+#alerts-body tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+@media (max-width: 600px) {
+
+    .input-row select,
+    .input-row input,
+    .input-row button {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    button,
+    select,
+    input {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+}
