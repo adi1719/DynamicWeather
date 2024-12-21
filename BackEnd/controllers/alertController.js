@@ -4,7 +4,7 @@ exports.createAlerts = async (req, res) => {
   try {
     const { email, thresoldTemperature, city } = req.body;
     const result = await createAlert(thresoldTemperature, email, city);
-    const data=await getAllAlerts();
+    const data = await getAllAlerts();
     return res.status(200).json({
       success: true,
       message: "Your Alert is Successfully created",
@@ -24,7 +24,7 @@ exports.removeAlert = async (req, res) => {
     const { id } = req.params;
 
     const result = await removeAlert(id);
-    const data=await getAllAlerts();
+    const data = await getAllAlerts();
 
     return res.status(200).json({
       success: true,

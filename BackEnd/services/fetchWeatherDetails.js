@@ -4,6 +4,7 @@ const {
   findMinMaxAvgtemperatureByTimestamp,
   saveOrUpdate,
 } = require("../db/queries");
+
 const getWeatherDetails = async (city) => {
   const { weather, main, dt, name } = await apiCallWeatherDetails(city);
 

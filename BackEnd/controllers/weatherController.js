@@ -1,7 +1,7 @@
 const axios = require("axios");
 const { getTemperatureStatsInDateRange } = require("../db/queries");
-const {getWeatherDetails}=require("../service/fetchWeatherDetails");
-const getTimestamps=require("../utils/dateParser");
+const { getWeatherDetails } = require("../services/fetchWeatherDetails");
+const getTimestamps = require("../utils/dateParser");
 exports.weatherDetails = async (req, res) => {
   try {
     const city = req.query.city;
@@ -24,9 +24,16 @@ exports.weatherDetails = async (req, res) => {
 exports.getPrevDetails = async (req, res) => {
   try {
     const city = req.params.city;
-    const { start_date, end_date} = req.query;
-    const { startTimestamp,endTimestamp }=getTimestamps(start_date,end_date);
-    const data = await getTemperatureStatsInDateRange(startTimestamp,endTimestamp,city);
+    const { start_date, end_date } = req.query;
+    const { startTimestamp, endTimestamp } = getTimestamps(
+      start_date,
+      end_date
+    );
+    const data = await getTemperatureStatsInDateRange(
+      startTimestamp,
+      endTimestamp,
+      city
+    );
     return res.status(200).json({
       success: true,
       message: "Successfully fetched previous weather details",
